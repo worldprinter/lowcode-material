@@ -1,11 +1,11 @@
-import styles from './wdesign.module.css';
+import './wdesign.scss';
 
 /* eslint-disable-next-line */
 export interface WdesignProps {}
 
 export function Wdesign(props: WdesignProps) {
   return (
-    <div className={styles['container']}>
+    <div>
       <h1>Welcome to Wdesign!</h1>
     </div>
   );

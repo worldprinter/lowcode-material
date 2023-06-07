@@ -15,9 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@worldprinter/lowcode-material-antd": ["libs/antd/src/index.ts"],
-      "@worldprinter/lowcode-material-mui": ["libs/mui/src/index.ts"],
-      "@worldprinter/lowcode-material-tdesign": ["libs/tdesign/src/index.ts"],
       "@worldprinter/lowcode-material-wdesign": ["libs/wdesign/src/index.ts"]
     }
   },

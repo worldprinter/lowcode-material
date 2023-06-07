@@ -13,27 +13,37 @@
       }
     },
     "build": {
-      "executor": "@nx/vite:build",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/wdesign"
-      },
-      "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
-        }
+        "outputPath": "dist/libs/wdesign",
+        "tsConfig": "libs/wdesign/tsconfig.lib.json",
+        "project": "libs/wdesign/package.json",
+        "entryFile": "libs/wdesign/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/wdesign/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["coverage/libs/wdesign"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/libs/wdesign"
+        "jestConfig": "libs/wdesign/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
       }
     }
   }
