@@ -1,1 +1,1 @@
-export * from './lib/wdesign';
+export * from './form';
