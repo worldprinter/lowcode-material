@@ -1,50 +1,70 @@
 {
-  "name": "wdesign",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/wdesign/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/wdesign/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
-    "build": {
-      "executor": "@nx/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/wdesign",
-        "tsConfig": "libs/wdesign/tsconfig.lib.json",
-        "project": "libs/wdesign/package.json",
-        "entryFile": "libs/wdesign/src/index.ts",
-        "external": ["react", "react-dom", "react/jsx-runtime"],
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "libs/wdesign/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/wdesign/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
+    "name": "wdesign",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/wdesign/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "lint": {
+            "executor": "@nx/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["libs/wdesign/**/*.{ts,tsx,js,jsx}"]
+            }
+        },
+        "build": {
+            "executor": "@nx/rollup:rollup",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/wdesign",
+                "tsConfig": "libs/wdesign/tsconfig.lib.json",
+                "project": "libs/wdesign/package.json",
+                "entryFile": "libs/wdesign/src/index.ts",
+                "external": ["react", "react-dom", "react/jsx-runtime"],
+                "rollupConfig": "@nx/react/plugins/bundle-rollup",
+                "compiler": "tsc",
+                "assets": [
+                    {
+                        "glob": "libs/wdesign/README.md",
+                        "input": ".",
+                        "output": "."
+                    },
+                    {
+                        "glob": "libs/wdesign/CHANGELOG.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ],
+                "format": ["esm", "cjs"],
+                "buildableProjectDepsInPackageJsonType": "dependencies",
+                "updateBuildableProjectDepsInPackageJson": true,
+                "generateExportsField": true,
+                "skipTypeCheck": true
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "libs/wdesign/jest.config.ts",
+                "passWithNoTests": true
+            },
+            "configurations": {
+                "ci": {
+                    "ci": true,
+                    "codeCoverage": true
+                }
+            }
+        },
+        "static:server": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "pnpm nx run wdesign:build --watch",
+                    "http-server dist/libs/wdesign -p 4500 -d -i -g -b --cors -c-1 --log-ip --utc-time"
+                ],
+                "parallel": true
+            }
         }
-      }
     }
-  }
 }
