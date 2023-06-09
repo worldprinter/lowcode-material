@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMClient from 'react-dom/client';
 import './index.css';
-import '@worldprinter/lowcode-engine/index.css';
+
 import {
   DEFAULT_PLUGIN_LIST,
   EnginContext,
