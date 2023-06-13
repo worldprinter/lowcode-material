@@ -6,6 +6,7 @@
     "devDependencies": {
         "@babel/preset-react": "^7.14.5",
         "@ianvs/prettier-plugin-sort-imports": "latest",
+        "@nx/cypress": "16.3.2",
         "@nx/devkit": "^16.2.1",
         "@nx/eslint-plugin": "16.2.1",
         "@nx/jest": "16.3.2",
@@ -14,7 +15,7 @@
         "@nx/react": "16.3.2",
         "@nx/rollup": "16.3.2",
         "@nx/storybook": "^16.2.1",
-        "@nx/vite": "^16.2.1",
+        "@nx/vite": "16.3.2",
         "@nx/webpack": "16.3.2",
         "@nx/workspace": "16.2.1",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
@@ -34,8 +35,10 @@
         "@vitest/coverage-c8": "^0.31.0",
         "@vitest/ui": "^0.31.0",
         "babel-jest": "^29.4.1",
+        "cypress": "^12.11.0",
         "eslint": "~8.15.0",
         "eslint-config-prettier": "8.1.0",
+        "eslint-plugin-cypress": "^2.10.3",
         "eslint-plugin-import": "2.27.5",
         "eslint-plugin-jsx-a11y": "6.7.1",
         "eslint-plugin-react": "7.32.2",
@@ -71,6 +74,7 @@
         "lodash": "^4.17.21",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "react-router-dom": "6.11.2",
         "tslib": "^2.3.0"
     }
 }

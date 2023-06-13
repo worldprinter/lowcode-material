@@ -1,24 +1,33 @@
 import React from 'react'
 
+import { useField } from '@worldprinter/formeasy'
+import type { InputProps } from '@worldprinter/wdesign-core'
 import { Input } from '@worldprinter/wdesign-core'
 
-import { withItem } from '../../shared/withItem'
+import type { FormItemProps } from '../form-item'
+import { useFormItemProps, useSplitFieldProps, withFormItem } from '../form-item'
+import { CheckForm } from '../shard'
 
-// import { ProductFormItemComponent } from '../formitem'
+export declare type FormInputProps = FormItemProps & InputProps
 
-// const InnerProductInputComponent: React.FC<any> = (props) => {
-//     console.log('ProductInputComponent', props)
+export function InnerInput(props: FormInputProps) {
+    const itemProps = useFormItemProps(props)
+    const [fieldProps, inputProps] = useSplitFieldProps(itemProps)
+    const [{ value }, , { setValue, setTouched }] = useField(fieldProps)
 
-//     useField()
-//     return <Input />
-// }
-
-const InnerProductInputComponent: React.FC<any> = (props) => {
-    console.log('ProductInputComponent', props)
-
-    return <Input {...props} />
+    return (
+        <Input
+            {...inputProps}
+            value={value}
+            onFocus={() => {
+                setTouched(true, true)
+            }}
+            onChange={(v: React.ChangeEvent<HTMLInputElement>) => {
+                setValue(v.target.value)
+            }}
+        />
+    )
 }
-const ProductInputComponent = withItem(InnerProductInputComponent)
-ProductInputComponent.displayName = 'ProductInputComponent'
 
-export { ProductInputComponent }
+export const FormInput = CheckForm(InnerInput)
+export const FormInputItem = withFormItem(FormInput)

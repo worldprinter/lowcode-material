@@ -2,27 +2,17 @@ import React from 'react'
 
 import { Logic } from '@worldprinter/formeasy'
 
-const LogicNameContext = React.createContext<string | undefined>(undefined)
-const LogicNameProvider = LogicNameContext.Provider
+import type { BaseFormItemProps } from '../form-item'
+import { CheckForm } from '../shard'
 
-const InnerProductLogicComponent: React.FC<any> = (props) => {
-    const name = React.useContext(LogicNameContext)
-    const newName = props.name || name
-    if (newName === undefined) {
-        return <div>Logic component name is required</div>
-    }
-    return (
-        <Logic
-            name={newName}
-            exp={'form.values.lastName.length > 5'}
-            expTrue={{ a: 1 }}
-            // expFalse={{ a: 2 }}
-        >
-            <LogicNameProvider value={newName}>{props.children}</LogicNameProvider>
-        </Logic>
-    )
+export declare type FormLogicProps<T extends Record<string, any> = Record<string, any>> = BaseFormItemProps & {
+    exp: string
+    expTrue?: Partial<T>
+    expFalse?: Partial<T>
 }
 
-InnerProductLogicComponent.displayName = 'ProductLogicComponent'
+function InnerFormLogic({ children, ...props }: React.PropsWithChildren<FormLogicProps>) {
+    return <Logic {...props}>{children}</Logic>
+}
 
-export const ProductLogicComponent = InnerProductLogicComponent
+export const FormLogic = CheckForm(InnerFormLogic)

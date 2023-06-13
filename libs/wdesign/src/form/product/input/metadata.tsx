@@ -1,19 +1,34 @@
-import { namePropsMeta } from '../../../customMetadata/nameSetter'
+import { BaseInputSetter, FormItemSetter, NameSetter, setterOrderBy } from '../../../setter'
 
-export const ProductInputMetadata = {
-    title: 'Input组件',
-    componentName: 'ProductInputComponent',
+export const FormInputMetadata = {
+    title: '基本输入框',
+    componentName: 'FormInput',
     groupName: '原子组件',
-    props: [namePropsMeta],
+    props: [NameSetter, ...BaseInputSetter],
     snippets: [
         {
-            title: 'Input组件',
+            title: '输入框',
             snapshotText: 'Input',
             category: '基础组件',
             schema: {
-                props: {
-                    // name: 'email',
-                },
+                props: {},
+            },
+        },
+    ],
+}
+
+export const FormInputItemMetadata = {
+    title: '输入框',
+    componentName: 'FormInputItem',
+    groupName: '报价表单',
+    props: setterOrderBy([NameSetter, ...FormItemSetter, ...BaseInputSetter], ['title', 'description', 'placeholder']),
+    snippets: [
+        {
+            title: '输入框',
+            snapshotText: '输入框',
+            category: '基础组件',
+            schema: {
+                props: {},
             },
         },
     ],

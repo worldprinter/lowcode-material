@@ -1,21 +1,16 @@
+import React from 'react'
+
+import type { FormikHelpers } from '@worldprinter/formeasy'
 import { FormikProvider, useFormik } from '@worldprinter/formeasy'
 
-const InnerProductFormComponent: React.FC<any> = (props) => {
+const InnerForm: React.FC<any> = (props) => {
     const formik = useFormik({
-        initialValues: {
-            name: 'xn',
-            phone: '1111111111',
-            email: '111111@xx.com',
-        },
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
-        },
-        watch: {
-            email: (value, formValue) => {
-                formValue.phone = value + '@xxx.com'
-            },
+        initialValues: {},
+        onSubmit<Values>(values: Values, formikHelpers: FormikHelpers<Values>): void {
+            console.log(values, formikHelpers)
         },
     })
+
     return (
         <FormikProvider value={formik}>
             <form onSubmit={formik.handleSubmit}>{props.children}</form>
@@ -23,5 +18,6 @@ const InnerProductFormComponent: React.FC<any> = (props) => {
     )
 }
 
-InnerProductFormComponent.displayName = 'ProductFormComponent'
-export const ProductFormComponent = InnerProductFormComponent
+InnerForm.displayName = 'Form'
+
+export const Form = InnerForm

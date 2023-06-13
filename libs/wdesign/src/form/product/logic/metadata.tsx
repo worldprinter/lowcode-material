@@ -1,19 +1,36 @@
-import { namePropsMeta } from '../../../customMetadata/nameSetter'
+import { NameSetter } from '../../../setter'
 
-export const ProductLogicMetadata = {
-    title: 'Logic组件',
-    componentName: 'ProductLogicComponent',
+export const FormLogicMetadata = {
+    title: '逻辑',
+    componentName: 'FormLogic',
     isContainer: true,
-    groupName: '原子组件',
-    props: [namePropsMeta],
+    groupName: '高级组件',
+    props: [
+        NameSetter,
+        {
+            name: 'expTrue',
+            title: '表达式为真',
+            valueType: 'object',
+            setters: ['JSONSetter'],
+            defaultValue: {},
+        },
+        {
+            name: 'expFalse',
+            title: '表达式为假',
+            valueType: 'object',
+            setters: ['JSONSetter'],
+            defaultValue: {},
+        },
+    ],
     snippets: [
         {
-            title: 'Logic组件',
+            title: '逻辑组件',
             snapshotText: 'Logic',
-            category: '基础组件',
+            category: '高级组件',
             schema: {
                 props: {
-                    name: '',
+                    expTrue: {},
+                    expFalse: {},
                 },
             },
         },
