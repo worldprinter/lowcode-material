@@ -2,7 +2,7 @@ import { get } from 'lodash'
 
 import type { MaterialPropType } from '@worldprinter/lowcode-model'
 
-export const CommonSetters: MaterialPropType[] = [
+export const CommonSetters = [
     {
         name: 'title',
         title: '标题',
@@ -199,4 +199,5 @@ export const CommonSetters: MaterialPropType[] = [
         setters: ['BooleanSetter'],
         defaultValue: false,
     },
-]
+    // @ts-ignore
+] as const satisfies MaterialPropType[]

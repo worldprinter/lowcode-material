@@ -2,7 +2,7 @@ import type { MaterialPropType } from '@worldprinter/lowcode-model'
 
 import { CommonSetters } from './common'
 
-export function setterOrderBy<T extends MaterialPropType>(setters: Array<T>, pickList: Array<String>) {
+export function setterOrderBy<T extends MaterialPropType>(setters: MaterialPropType[], pickList: Array<String>) {
     return setters.sort((a, b) => {
         return pickList.indexOf(a.name) - pickList.indexOf(b.name)
     })
@@ -10,6 +10,7 @@ export function setterOrderBy<T extends MaterialPropType>(setters: Array<T>, pic
 
 export function getCommonSetters(...pickList: Array<(typeof CommonSetters)[number]['name']>) {
     return setterOrderBy(
+        // @ts-ignore
         CommonSetters.filter((i) => pickList.includes(i.name)),
         pickList,
     )
