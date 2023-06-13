@@ -1,15 +1,15 @@
 import { namePropsMeta } from '../../../customMetadata/nameSetter'
 
-export const ProductLogicMetadata = {
-    title: 'Logic组件',
-    componentName: 'ProductLogicComponent',
+export const ProductFormMetadata = {
+    title: 'Form组件',
+    componentName: 'ProductFormComponent',
     isContainer: true,
     groupName: '原子组件',
     props: [namePropsMeta],
     snippets: [
         {
-            title: 'Logic组件',
-            snapshotText: 'Logic',
+            title: 'Form组件',
+            snapshotText: 'Form',
             category: '基础组件',
             schema: {
                 props: {
