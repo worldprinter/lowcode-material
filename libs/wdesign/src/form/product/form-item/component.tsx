@@ -57,7 +57,7 @@ const validateHandler = (
 ) => {
     if (validation === 'regex' && validateRegex) {
         return (value: string) => {
-            if (validateRegex.test(value)) {
+            if (!validateRegex.test(value)) {
                 return validateMessage
             }
         }
@@ -65,7 +65,7 @@ const validateHandler = (
         const reg = regMap[validation as keyof typeof regMap]
         if (reg) {
             return (value: string) => {
-                if (reg.test(value)) {
+                if (!reg.test(value)) {
                     return validateMessage
                 }
             }
@@ -88,7 +88,6 @@ function InnerFormItem({
     const [fieldProps, uiProps] = useSplitFieldProps(itemProps)
     const validate = validation ? validateHandler(validation, validateMessage, validateRegex) : undefined
 
-    console.log(validate, 'validate')
     const [field, meta] = useField({
         ...fieldProps,
         validate,
