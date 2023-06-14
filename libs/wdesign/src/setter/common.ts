@@ -199,5 +199,73 @@ export const CommonSetters = [
         setters: ['BooleanSetter'],
         defaultValue: false,
     },
+    {
+        name: 'error',
+        title: '错误',
+        valueType: 'boolean',
+        setters: ['BooleanSetter'],
+        defaultValue: false,
+    },
+    {
+        name: 'variant',
+        title: '边框样式',
+        valueType: 'string',
+        setters: [
+            {
+                componentName: 'SelectSetter',
+                props: {
+                    options: [
+                        {
+                            value: 'default',
+                            label: '标准',
+                        },
+                        {
+                            value: 'filled',
+                            label: '填充',
+                        },
+                        {
+                            value: 'unstyled',
+                            label: '无边框',
+                        },
+                    ],
+                },
+            },
+        ],
+    },
+    {
+        name: 'size',
+        title: '控件尺寸',
+        valueType: 'string',
+        setters: [
+            {
+                componentName: 'SelectSetter',
+                props: {
+                    options: [
+                        {
+                            value: 'xs',
+                            label: 'xs',
+                        },
+                        {
+                            value: 'sm',
+                            label: 'sm',
+                        },
+                        {
+                            value: 'md',
+                            label: 'md',
+                        },
+                        {
+                            value: 'lg',
+                            label: 'lg',
+                        },
+                        {
+                            value: 'xl',
+                            label: 'xl',
+                        },
+                    ],
+                },
+            },
+        ],
+    },
+
     // @ts-ignore
 ] as const satisfies MaterialPropType[]

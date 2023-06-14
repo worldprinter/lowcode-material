@@ -13,7 +13,6 @@ export declare type BaseFormItemProps = {
     name: string
     type?: string
     value?: any
-    validation?: string | FieldValidator
 }
 
 export declare type FormItemProps = BaseFormItemProps &
@@ -41,12 +40,59 @@ export function useFormItemProps<T>(props: BaseFormItemProps & T) {
     }
 }
 
-function InnerFormItem({ children, ...props }: React.PropsWithChildren<FormItemProps>) {
+const regMap = {
+    required: /.+/g,
+    email: /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/g,
+    phone: /^1[3456789]\d{9}$/g,
+    url: /^((https|http|ftp|rtsp|mms)?:\/\/)\S+/g,
+    number: /^\d+$/g,
+    integer: /^[-+]?\d+$/g,
+    float: /^[-+]?\d+(\.\d+)?$/g,
+}
+
+const validateHandler = (
+    validation: string | FieldValidator,
+    validateMessage: string & {} = '验证失败',
+    validateRegex?: RegExp,
+) => {
+    if (validation === 'regex' && validateRegex) {
+        return (value: string) => {
+            if (validateRegex.test(value)) {
+                return validateMessage
+            }
+        }
+    } else if (validation !== 'regex' && typeof validation === 'string') {
+        const reg = regMap[validation as keyof typeof regMap]
+        if (reg) {
+            return (value: string) => {
+                if (reg.test(value)) {
+                    return validateMessage
+                }
+            }
+        }
+    }
+}
+
+function InnerFormItem({
+    children,
+    validate: validation,
+    validateMessage,
+    validateRegex,
+    ...props
+}: React.PropsWithChildren<
+    FormItemProps & { validate?: string | FieldValidator; validateMessage?: string; validateRegex?: RegExp }
+>) {
     // 分离出 布局 和 表单项 的 props
     const [layoutProps, itemProps] = useSplitLayoutProps(props)
     // 分理处 表单项 和 UI 的 props
     const [fieldProps, uiProps] = useSplitFieldProps(itemProps)
-    const [field, meta] = useField(fieldProps)
+    const validate = validation ? validateHandler(validation, validateMessage, validateRegex) : undefined
+
+    console.log(validate, 'validate')
+    const [field, meta] = useField({
+        ...fieldProps,
+        validate,
+    })
 
     const Label = () => {
         return (

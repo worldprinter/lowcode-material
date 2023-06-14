@@ -28,7 +28,9 @@ export const LayoutSetter = getCommonSetters(
 
 export const FormItemSetter = [
     ...getCommonSetters('title', 'description'),
-    ...getCommonSetters('labelPosition', 'labelWidth', 'showDescription', 'showValidation'),
+    ...getCommonSetters('labelPosition', 'labelWidth', 'showDescription', 'showValidation', 'validate'),
 ]
 
-export const BaseInputSetter = [...getCommonSetters('placeholder')]
+export const BaseInputSetter = [
+    ...getCommonSetters('placeholder', 'disabled', 'readonly', 'required', 'hidden', 'error', 'size', 'variant'),
+]

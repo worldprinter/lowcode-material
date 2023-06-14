@@ -15,6 +15,7 @@ export function InnerInput(props: FormInputProps) {
     const [fieldProps, inputProps] = useSplitFieldProps(itemProps)
     const [{ value }, , { setValue, setTouched }] = useField(fieldProps)
 
+    console.log(inputProps, 'inputProps')
     return (
         <Input
             {...inputProps}
