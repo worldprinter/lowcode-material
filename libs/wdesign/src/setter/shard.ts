@@ -56,3 +56,17 @@ export const BaseSelectSetter = [
         'searchable',
     ),
 ]
+
+export const BaseCheckboxGroupSetter = [
+    ...getCommonSetters(
+        'disabled',
+        'required',
+        'hidden',
+        'data',
+        'size',
+        'variant',
+        'defaultValue',
+        'itemDirection',
+        'itemSpacing',
+    ),
+]

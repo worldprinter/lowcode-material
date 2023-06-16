@@ -1,4 +1,13 @@
-import { FormCheckbox, FormCheckboxItem, FormCheckboxItemMetadata, FormCheckboxMetadata } from './checkbox'
+import {
+    FormCheckbox,
+    FormCheckboxGroup,
+    FormCheckboxGroupItem,
+    FormCheckboxGroupItemMetadata,
+    FormCheckboxGroupMetadata,
+    FormCheckboxItem,
+    FormCheckboxItemMetadata,
+    FormCheckboxMetadata,
+} from './checkbox'
 import { Form, FormMetadata } from './form'
 import { FormItem, FormItemMetadata } from './form-item'
 import { FormInput, FormInputItem, FormInputItemMetadata, FormInputMetadata } from './input'
@@ -10,6 +19,8 @@ export const ProductComponent = {
     FormInputItem,
     FormCheckbox,
     FormCheckboxItem,
+    FormCheckboxGroup,
+    FormCheckboxGroupItem,
     FormSelect,
     FormSelectItem,
     Form,
@@ -25,6 +36,8 @@ export const ProductMetadata = [
     FormLayoutMetadata,
     FormCheckboxMetadata,
     FormCheckboxItemMetadata,
+    FormCheckboxGroupMetadata,
+    FormCheckboxGroupItemMetadata,
     FormSelectMetadata,
     FormSelectItemMetadata,
 ]

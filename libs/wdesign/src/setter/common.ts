@@ -328,7 +328,7 @@ export const CommonSetters = [
                                             name: 'value',
                                             title: '值',
                                             valueType: 'string',
-                                            setters: ['NumberSetter'],
+                                            setters: ['StringSetter'],
                                         },
                                     ],
                                     collapse: false,
@@ -355,6 +355,29 @@ export const CommonSetters = [
         valueType: 'boolean',
         setters: ['BooleanSetter'],
     },
+    {
+        name: 'layout',
+        title: '对齐方式',
+        valueType: 'string',
+        setters: [
+            {
+                componentName: 'SelectSetter',
+                props: {
+                    options: [
+                        {
+                            value: 'vertical',
+                            label: '水平',
+                        },
+                        {
+                            value: 'horizontal',
+                            label: '垂直',
+                        },
+                    ],
+                },
+            },
+        ],
+        defaultValue: 'horizontal',
+    },
     // 是否可创建,接收(query: string, data: SelectItem[]) => boolean
     // {
     //     name: 'shouldCreate',
@@ -362,5 +385,35 @@ export const CommonSetters = [
     //     valueType: 'boolean',
     //     setters: ['BooleanSetter'],
     // },
+    {
+        name: 'itemDirection',
+        title: '选项方向',
+        valueType: 'string',
+        setters: [
+            {
+                componentName: 'SelectSetter',
+                props: {
+                    options: [
+                        {
+                            value: 'vertical',
+                            label: '垂直',
+                        },
+                        {
+                            value: 'horizontal',
+                            label: '水平',
+                        },
+                    ],
+                },
+                initialValue: 'horizontal',
+            },
+        ],
+    },
+    {
+        name: 'itemSpacing',
+        title: '标题间距',
+        valueType: 'string',
+        setters: ['StringSetter', 'NumberSetter'],
+        defaultValue: 'md',
+    },
     // @ts-ignore
 ] as const satisfies MaterialPropType[]
