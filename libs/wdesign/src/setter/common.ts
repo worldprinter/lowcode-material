@@ -7,7 +7,13 @@ export const CommonSetters = [
         name: 'title',
         title: '标题',
         valueType: 'string',
-        setters: ['StringSetter'],
+        setters: [
+            {
+                componentName: 'StringSetter',
+                props: {},
+                initialValue: '标题',
+            },
+        ],
     },
     {
         name: 'description',
@@ -58,6 +64,7 @@ export const CommonSetters = [
                         },
                     ],
                 },
+                initialValue: 'top',
             },
         ],
         defaultValue: 'top',
@@ -200,13 +207,6 @@ export const CommonSetters = [
         defaultValue: false,
     },
     {
-        name: 'error',
-        title: '错误',
-        valueType: 'boolean',
-        setters: ['BooleanSetter'],
-        defaultValue: false,
-    },
-    {
         name: 'variant',
         title: '边框样式',
         valueType: 'string',
@@ -266,6 +266,101 @@ export const CommonSetters = [
             },
         ],
     },
-
+    {
+        name: 'labelHeight',
+        title: '标题高度',
+        valueType: 'string',
+        condition: (state: any) => {
+            return get(state, 'labelPosition') === 'left'
+        },
+        defaultValue: 'sm',
+        setters: [
+            {
+                componentName: 'SelectSetter',
+                props: {
+                    options: [
+                        {
+                            value: 'xs',
+                            label: 'xs',
+                        },
+                        {
+                            value: 'sm',
+                            label: 'sm',
+                        },
+                        {
+                            value: 'md',
+                            label: 'md',
+                        },
+                        {
+                            value: 'lg',
+                            label: 'lg',
+                        },
+                        {
+                            value: 'xl',
+                            label: 'xl',
+                        },
+                    ],
+                },
+            },
+        ],
+    },
+    {
+        name: 'data',
+        title: '数据',
+        valueType: 'array',
+        setters: [
+            {
+                componentName: 'ArraySetter',
+                props: {
+                    item: {
+                        setters: [
+                            {
+                                componentName: 'ShapeSetter',
+                                props: {
+                                    elements: [
+                                        {
+                                            name: 'label',
+                                            title: '属性名',
+                                            valueType: 'string',
+                                            setters: ['StringSetter'],
+                                        },
+                                        {
+                                            name: 'value',
+                                            title: '值',
+                                            valueType: 'string',
+                                            setters: ['NumberSetter'],
+                                        },
+                                    ],
+                                    collapse: false,
+                                },
+                                initialValue: {},
+                            },
+                        ],
+                        initialValue: {},
+                    },
+                },
+                initialValue: [],
+            },
+        ],
+    },
+    {
+        name: 'defaultValue',
+        title: '默认值',
+        valueType: 'string',
+        setters: ['StringSetter'],
+    },
+    {
+        name: 'searchable',
+        title: '可搜索',
+        valueType: 'boolean',
+        setters: ['BooleanSetter'],
+    },
+    // 是否可创建,接收(query: string, data: SelectItem[]) => boolean
+    // {
+    //     name: 'shouldCreate',
+    //     title: '可创建',
+    //     valueType: 'boolean',
+    //     setters: ['BooleanSetter'],
+    // },
     // @ts-ignore
 ] as const satisfies MaterialPropType[]

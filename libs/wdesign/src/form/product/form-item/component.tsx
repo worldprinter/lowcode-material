@@ -1,9 +1,9 @@
-import { isNumber, omit, pick } from 'lodash'
+import { get, omit, pick } from 'lodash'
 import React from 'react'
 
 import { useField } from '@worldprinter/formeasy'
 import type { FieldValidator } from '@worldprinter/formeasy/src/formik/types'
-import { Box, Group, rem, Stack } from '@worldprinter/wdesign-core'
+import { Input, rem } from '@worldprinter/wdesign-core'
 
 import type { FormLayoutProps } from '../layout'
 import { useSplitLayoutProps } from '../layout'
@@ -19,12 +19,24 @@ export declare type FormItemProps = BaseFormItemProps &
     FormLayoutProps & {
         title?: string
         description?: string
+        showDescription?: boolean
     }
 
 export function useSplitFieldProps<T>(props: FormItemProps & T) {
     return React.useMemo(() => {
-        const baseProps = pick(props, ['name', 'type', 'value', 'validation']) as BaseFormItemProps
-        return [baseProps, omit(props, ['name', 'type', 'value', 'validation']) as T] as const
+        const baseProps = pick(props, [
+            'name',
+            'type',
+            'value',
+            'validation',
+            'description',
+            'showDescription',
+        ]) as BaseFormItemProps
+
+        return [
+            baseProps,
+            omit(props, ['name', 'type', 'value', 'validation', 'description', 'showDescription']) as T,
+        ] as const
     }, [props])
 }
 
@@ -48,6 +60,14 @@ const regMap = {
     number: /^\d+$/g,
     integer: /^[-+]?\d+$/g,
     float: /^[-+]?\d+(\.\d+)?$/g,
+}
+
+const sizes = {
+    xs: rem(30),
+    sm: rem(36),
+    md: rem(42),
+    lg: rem(50),
+    xl: rem(60),
 }
 
 const validateHandler = (
@@ -78,6 +98,8 @@ function InnerFormItem({
     validate: validation,
     validateMessage,
     validateRegex,
+    description,
+    showDescription,
     ...props
 }: React.PropsWithChildren<
     FormItemProps & { validate?: string | FieldValidator; validateMessage?: string; validateRegex?: RegExp }
@@ -93,71 +115,36 @@ function InnerFormItem({
         validate,
     })
 
-    const Label = () => {
-        return (
-            <Box
-                component={'label'}
-                htmlFor={field.name}
-                sx={() => ({
-                    width:
-                        layoutProps.labelPosition === 'top'
-                            ? 'inherit'
-                            : isNumber(layoutProps.labelWidth)
-                            ? rem(layoutProps.labelWidth)
-                            : layoutProps.labelWidth,
-                })}
-            >
-                {uiProps.title}
-            </Box>
-        )
-    }
-
-    const MetaInfo = () => {
-        return (
-            <Box>
-                {layoutProps.showDescription && uiProps.description && (
-                    <Box
-                        component={'span'}
-                        sx={{ color: 'gray' }}
-                    >
-                        {uiProps.description}
-                    </Box>
-                )}
-                {meta.error && meta.touched && (
-                    <Box
-                        component={'span'}
-                        sx={{ color: 'red' }}
-                    >
-                        {meta.error}
-                    </Box>
-                )}
-            </Box>
-        )
-    }
-
-    if (layoutProps.labelPosition === 'top') {
-        return (
-            <Stack>
-                <Label />
-                <Box>
-                    <FormItemProvider value={fieldProps}>{children}</FormItemProvider>
-                    <MetaInfo />
-                </Box>
-            </Stack>
-        )
-    }
+    console.log('fieldProps', fieldProps)
 
     return (
-        <Group>
-            <Label />
-            <Box>
-                <FormItemProvider value={fieldProps}>{children}</FormItemProvider>
-                <MetaInfo />
-            </Box>
-        </Group>
+        <Input.Wrapper
+            inputWrapperOrder={['label', 'input', 'description', 'error']}
+            styles={{
+                labelWrapper: {
+                    width: layoutProps.labelWidth,
+                },
+            }}
+            {...layoutProps}
+            {...uiProps}
+            labelPosition={layoutProps.labelPosition}
+            label={uiProps.title}
+            error={meta.error}
+            description={showDescription && description}
+            sx={() => ({
+                alignItems: 'flex-start',
+                WebkitAlignItems: 'flex-start',
+                '.label-wrapper-container label': {
+                    height: get(sizes, layoutProps?.labelHeight ?? 'sm', 'sm'),
+                    lineHeight: get(sizes, layoutProps?.labelHeight ?? 'sm', 'sm'),
+                },
+            })}
+        >
+            <FormItemProvider value={fieldProps}>{children}</FormItemProvider>
+        </Input.Wrapper>
     )
 }
-
+;``
 export const FormItem = CheckForm(InnerFormItem)
 
 export function withFormItem<T>(Component: React.FC<BaseFormItemProps & T>) {

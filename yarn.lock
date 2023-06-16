@@ -2581,12 +2581,12 @@ __metadata:
     "@vitest/coverage-c8": ^0.31.0
     "@vitest/ui": ^0.31.0
     "@worldprinter/formeasy": 0.2.1
-    "@worldprinter/lowcode-engine": 0.4.0
-    "@worldprinter/lowcode-layout": 0.4.0
-    "@worldprinter/lowcode-model": 0.4.0
-    "@worldprinter/lowcode-render": 0.4.0
+    "@worldprinter/lowcode-engine": 0.8.0
+    "@worldprinter/lowcode-layout": 0.8.0
+    "@worldprinter/lowcode-model": 0.8.0
+    "@worldprinter/lowcode-render": 0.8.0
     "@worldprinter/nx-tools": ^0.12.0
-    "@worldprinter/wdesign-core": 0.6.0
+    "@worldprinter/wdesign-core": 0.9.0
     antd: ^5.6.1
     babel-jest: ^29.4.1
     cypress: ^12.11.0
@@ -5511,9 +5511,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@worldprinter/lowcode-engine@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@worldprinter/lowcode-engine@npm:0.4.0"
+"@worldprinter/lowcode-engine@npm:0.8.0":
+  version: 0.8.0
+  resolution: "@worldprinter/lowcode-engine@npm:0.8.0"
   dependencies:
     "@ant-design/icons": 5.1.4
     "@dnd-kit/core": 6.0.8
@@ -5522,8 +5522,8 @@ __metadata:
     "@dnd-kit/utilities": 3.2.1
     "@emotion/styled": 11.10.6
     "@monaco-editor/react": 4.5.1
-    "@worldprinter/lowcode-model": 0.4.0
-    "@worldprinter/lowcode-render": 0.4.0
+    "@worldprinter/lowcode-model": 0.8.0
+    "@worldprinter/lowcode-render": 0.8.0
     "@worldprinter/wdesign-core": 0.4.0
     ahooks: 3.7.7
     antd: 5.6.1
@@ -5535,54 +5535,56 @@ __metadata:
     monaco-editor: 0.38.0
     rc-select: 14.5.2
     re-resizable: 6.9.9
-    react: 18.2.0
-    react-dom: 18.2.0
     react-i18next: 12.3.1
-  checksum: fcb71159ac01e310328fccb693c92a3c83a73a76b89a906f2bac45ded26f60850f19ff2c938194d44438b867cf862bfd3a344946ddbdd3ec82a14e7540cf01b9
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 14ee988e4125b4e31399613b120cc71d4dc416f322526fbe8dbd72d65767fc1edcaf386b942783642699e596b5e8456233f6ad27306ba75c6cd6fe9144255970
   languageName: node
   linkType: hard
 
-"@worldprinter/lowcode-layout@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@worldprinter/lowcode-layout@npm:0.4.0"
+"@worldprinter/lowcode-layout@npm:0.8.0":
+  version: 0.8.0
+  resolution: "@worldprinter/lowcode-layout@npm:0.8.0"
   dependencies:
-    "@worldprinter/lowcode-model": 0.4.0
-    "@worldprinter/lowcode-render": 0.4.0
     "@worldprinter/wdesign-core": 0.4.0
-    ahooks: 3.7.7
     lodash-es: 4.17.21
     mitt: 3.0.0
-    react: 18.2.0
-    react-dom: 18.2.0
-  checksum: 75c430663cb32badc82512b1ee654986c59caeeaf3cf4d4743a7bafe44d1a55fe6916887b3d1fddbfa17ec5a8e6155077df412ebb613cf565d3a8593805c023b
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: c983259969cbc6d1578c4eafaf7ae15ce30928a47ef0482d2d53f636c5817fa26d55f7cfd49a9da92e45e6dbae754c2bee9c62ce696b1abdc9d80d2986ec8129
   languageName: node
   linkType: hard
 
-"@worldprinter/lowcode-model@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@worldprinter/lowcode-model@npm:0.4.0"
+"@worldprinter/lowcode-model@npm:0.8.0":
+  version: 0.8.0
+  resolution: "@worldprinter/lowcode-model@npm:0.8.0"
   dependencies:
     html-tag-names: 2.1.0
     lodash-es: 4.17.21
     mitt: 3.0.0
-    react: 18.2.0
     superstruct: 1.0.3
-  checksum: 4977503f832965213c0170d365798cd5eac89fce8691598eac41fa60dbae67f555db355fc5be28a24ace6dec531e26e0706734df77baa79c8af454084cb50e5f
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 9e7adf3982308e5c48e17d3d74fa867621c4bb65cf90eae5722ecb226dff4563b21244363c2fcd786ff6dc399ecfbeef3188552970a24490d35aabdb2cc95871
   languageName: node
   linkType: hard
 
-"@worldprinter/lowcode-render@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@worldprinter/lowcode-render@npm:0.4.0"
+"@worldprinter/lowcode-render@npm:0.8.0":
+  version: 0.8.0
+  resolution: "@worldprinter/lowcode-render@npm:0.8.0"
   dependencies:
-    "@worldprinter/lowcode-model": 0.4.0
+    "@worldprinter/lowcode-model": 0.8.0
     html-tag-names: 2.1.0
     loadjs: 4.3.0-rc1
     lodash-es: 4.17.21
-    react: 18.2.0
-    react-dom: 18.2.0
     zustand: 4.3.8
-  checksum: 0aa69352cf73bcf75d67841970c5e426aaa26937b2197ea625a00dbfa6fdb77f8c1df4cc0d2d2f24faa80cbb54935c7cec792d1cb5bd7a100d704f4c4b96d87f
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 0999dd67b72389d266df60aa8562cddf02a9a68eec8a714484f3dfedc1b91015b1c127d9d9198f2bc8f4e45bdc788a7e7c0f0b6226338d477fb1f20b55861dc0
   languageName: node
   linkType: hard
 
@@ -5614,21 +5616,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@worldprinter/wdesign-core@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@worldprinter/wdesign-core@npm:0.6.0"
+"@worldprinter/wdesign-core@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@worldprinter/wdesign-core@npm:0.9.0"
   dependencies:
     "@floating-ui/react": ^0.19.1
     "@radix-ui/react-scroll-area": 1.0.2
-    "@worldprinter/wdesign-hooks": 0.6.0
-    "@worldprinter/wdesign-styles": 0.6.0
-    "@worldprinter/wdesign-utils": 0.6.0
+    "@worldprinter/wdesign-hooks": 0.9.0
+    "@worldprinter/wdesign-styles": 0.9.0
+    "@worldprinter/wdesign-utils": 0.9.0
     react-remove-scroll: ^2.5.5
     react-textarea-autosize: 8.3.4
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 8d847d1c9f595bf648f112220a2fbe8c28323e87eb7953e7dcd868b858e242c9c0a51d65dc2d991b89cfb18a936d62766cac3d7666f41053b1c7615581428046
+    react-is: ">=16.8.0"
+  checksum: 58189cb6190fa8b3a5196008cdaa74edff4478e4505091894fba529eb06b2d773965249ccc0d638da54ccf6e5ae5841c41f1757a079dd5ef2288afb848d3dda0
   languageName: node
   linkType: hard
 
@@ -5641,15 +5644,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@worldprinter/wdesign-hooks@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@worldprinter/wdesign-hooks@npm:0.6.0"
-  dependencies:
-    fast-deep-equal: ^3.1.3
-    klona: ^2.0.5
+"@worldprinter/wdesign-hooks@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@worldprinter/wdesign-hooks@npm:0.9.0"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: ea9e4902cfc5586555cc065d9dd57b2f800d52ebf0b9c8afdd7463df0f005ef19e363559393a34ae69616fc90971d6e79235103dcdc8d60476afbffe71952616
+    react-dom: ">=16.8.0"
+    react-is: ">=16.8.0"
+  checksum: f6f32cdaed617816a827fe9ac5779aa0eec39387f62b03ec20faed32310ec8382619a9bdacd0d70b51c8f99786aa4a352e9312323686c92fe63155c90b21558b
   languageName: node
   linkType: hard
 
@@ -5668,9 +5670,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@worldprinter/wdesign-styles@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@worldprinter/wdesign-styles@npm:0.6.0"
+"@worldprinter/wdesign-styles@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@worldprinter/wdesign-styles@npm:0.9.0"
   dependencies:
     "@emotion/cache": 11.11.0
     "@emotion/serialize": 1.1.2
@@ -5681,7 +5683,8 @@ __metadata:
     "@emotion/react": ">=11.9.0"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: aacd1333d7216b3826e1bfdd104e2d1d76d2b18ecb0aa516f7d9781459de06cfa39a1e2308f2ddaca8c8407ba11ba853d769c8725f4c4e46a2e9b9222085266a
+    react-is: ">=16.8.0"
+  checksum: 5917cb2fac3c34ca9444e4e5b7fd222b89c482745ec8526c4e6a5f07ee7ff23b9ebdd646e84ea8a537cabcb3f39ee8b32b4284ab506b78f21ca7bbf957547bbc
   languageName: node
   linkType: hard
 
@@ -5694,12 +5697,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@worldprinter/wdesign-utils@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@worldprinter/wdesign-utils@npm:0.6.0"
+"@worldprinter/wdesign-utils@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@worldprinter/wdesign-utils@npm:0.9.0"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 9dd51384106f5d18f925a9baee46c5c43ffaa4a9d1440411ad743d4655df58c06d887dc891b1f935dc88f95b425b4c5b2070bb2f583cb1912e2a8495bbebb635
+    react-dom: ">=16.8.0"
+    react-is: ">=16.8.0"
+  checksum: 1667234347c5f503c818f4fea9bf93659cc9ad469edd52c67bcb8ad7e73444a3aadf4ab63cb4af6b6f3c0155f3b3df68a99732e6a8cbc795fa561bff66b0540d
   languageName: node
   linkType: hard
 

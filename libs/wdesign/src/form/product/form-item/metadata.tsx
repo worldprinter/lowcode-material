@@ -12,7 +12,9 @@ export const FormItemMetadata = {
             snapshotText: '表单项',
             category: '基础组件',
             schema: {
-                props: {},
+                props: {
+                    title: '表单项',
+                },
             },
         },
     ],

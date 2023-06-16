@@ -21,16 +21,38 @@ export const LayoutSetter = getCommonSetters(
     'layoutSpacing',
     'labelPosition',
     'labelWidth',
-    'showDescription',
+    'labelHeight',
     'showValidation',
     'inherit',
 )
 
 export const FormItemSetter = [
-    ...getCommonSetters('title', 'description'),
-    ...getCommonSetters('labelPosition', 'labelWidth', 'showDescription', 'showValidation', 'validate'),
+    ...getCommonSetters(
+        'title',
+        'labelPosition',
+        'labelWidth',
+        'labelHeight',
+        'showValidation',
+        'validate',
+        'showDescription',
+        'description',
+    ),
 ]
 
 export const BaseInputSetter = [
-    ...getCommonSetters('placeholder', 'disabled', 'readonly', 'required', 'hidden', 'error', 'size', 'variant'),
+    ...getCommonSetters('placeholder', 'disabled', 'readonly', 'required', 'hidden', 'size', 'variant'),
+]
+
+export const BaseSelectSetter = [
+    ...getCommonSetters(
+        'placeholder',
+        'disabled',
+        'required',
+        'hidden',
+        'data',
+        'size',
+        'variant',
+        'defaultValue',
+        'searchable',
+    ),
 ]

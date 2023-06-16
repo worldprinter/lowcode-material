@@ -6,10 +6,6 @@ export const NameSetter: MaterialPropType = {
     valueType: 'string',
     setters: ['StringSetter'],
     condition: (state) => {
-        console.log(state, 'state')
-        // if (state.type === 'primary') {
-        //     return true;
-        // }
         return true
     },
 }
