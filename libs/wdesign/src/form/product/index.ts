@@ -13,6 +13,7 @@ import { FormItem, FormItemMetadata } from './form-item'
 import { FormInput, FormInputItem, FormInputItemMetadata, FormInputMetadata } from './input'
 import { FormLayout, FormLayoutMetadata } from './layout'
 import { FormSelect, FormSelectItem, FormSelectItemMetadata, FormSelectMetadata } from './select'
+import { FormText, FormTextMetadata } from './text'
 
 export const ProductComponent = {
     FormInput,
@@ -26,6 +27,7 @@ export const ProductComponent = {
     Form,
     FormItem,
     FormLayout,
+    FormText,
 }
 
 export const ProductMetadata = [
@@ -40,4 +42,5 @@ export const ProductMetadata = [
     FormCheckboxGroupItemMetadata,
     FormSelectMetadata,
     FormSelectItemMetadata,
+    FormTextMetadata,
 ]

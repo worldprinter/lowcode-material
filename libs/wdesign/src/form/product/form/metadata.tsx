@@ -13,5 +13,14 @@ export const FormMetadata = {
                 props: {},
             },
         },
+        {
+            title: '表单',
+            snapshotText: '表单',
+            groupName: '报价表单',
+            category: '基础组件',
+            schema: {
+                props: {},
+            },
+        },
     ],
 }

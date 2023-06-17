@@ -415,5 +415,37 @@ export const CommonSetters = [
         setters: ['StringSetter', 'NumberSetter'],
         defaultValue: 'md',
     },
+    {
+        name: 'text',
+        title: '文本',
+        valueType: 'string',
+        setters: ['StringSetter'],
+        defaultValue: '文本',
+    },
+    {
+        name: 'width',
+        title: '宽度',
+        valueType: 'string',
+        setters: ['StringSetter'],
+        defaultValue: '100%',
+    },
+    {
+        name: 'truncate',
+        title: '截断',
+        valueType: 'boolean',
+        setters: ['BooleanSetter'],
+    },
+    {
+        name: 'lineClamp',
+        title: '行数',
+        valueType: 'number',
+        setters: ['NumberSetter'],
+    },
+    {
+        name: 'color',
+        title: '文本颜色',
+        valueType: 'string',
+        setters: ['StringSetter'],
+    },
     // @ts-ignore
 ] as const satisfies MaterialPropType[]

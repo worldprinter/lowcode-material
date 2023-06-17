@@ -70,3 +70,7 @@ export const BaseCheckboxGroupSetter = [
         'itemSpacing',
     ),
 ]
+
+export const BaseTextSetter = [
+    ...getCommonSetters('text', 'width', 'disabled', 'hidden', 'size', 'truncate', 'lineClamp', 'color'),
+]

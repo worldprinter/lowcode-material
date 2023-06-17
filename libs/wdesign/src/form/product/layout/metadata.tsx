@@ -15,5 +15,14 @@ export const FormLayoutMetadata = {
                 props: {},
             },
         },
+        {
+            title: '布局',
+            groupName: '报价表单',
+            snapshotText: '布局',
+            category: '基础组件',
+            schema: {
+                props: {},
+            },
+        },
     ],
 }

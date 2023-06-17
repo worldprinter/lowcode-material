@@ -135,8 +135,8 @@ function InnerFormItem({
                 alignItems: 'flex-start',
                 WebkitAlignItems: 'flex-start',
                 '.label-wrapper-container label': {
-                    height: get(sizes, layoutProps?.labelHeight ?? 'sm', 'sm'),
-                    lineHeight: get(sizes, layoutProps?.labelHeight ?? 'sm', 'sm'),
+                    height: get(sizes, layoutProps?.labelHeight || 'sm', 'sm'),
+                    lineHeight: get(sizes, layoutProps?.labelHeight || 'sm', 'sm'),
                 },
             })}
         >
