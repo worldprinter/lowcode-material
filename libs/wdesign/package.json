@@ -1,4 +1,16 @@
 {
-  "name": "@worldprinter/lowcode-material-wdesign",
-  "version": "0.1.1"
+    "name": "@worldprinter/lowcode-material-wdesign",
+    "version": "0.1.1",
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0",
+        "react-is": ">=16.8.0"
+    },
+    "dependencies": {
+        "@worldprinter/formeasy": "^0.2.0",
+        "@worldprinter/lowcode-model": "^0.8.0",
+        "@worldprinter/wdesign-core": "^0.9.0",
+        "lodash": "^4.17.21"
+    },
+    "devDependencies": {}
 }
