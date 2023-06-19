@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/worldprinter/lowcode-material/compare/v0.1.0...v0.1.1) (2023-06-19)
+
+
+### Bug Fixes
+
+* fixed text container meta ([3075016](https://github.com/worldprinter/lowcode-material/commit/30750167eee1b05c01909e5679f1a1e3150b8dbb))
+
 ## 0.1.0 (2023-06-17)
 
 
