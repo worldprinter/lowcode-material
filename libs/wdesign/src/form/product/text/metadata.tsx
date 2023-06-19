@@ -3,7 +3,6 @@ import { BaseTextSetter } from '../../../setter'
 export const FormTextMetadata = {
     title: '文本',
     componentName: 'FormText',
-    isContainer: true,
     groupName: '原子组件',
     props: [...BaseTextSetter],
     snippets: [
