@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/worldprinter/lowcode-material/compare/v0.1.1...v0.2.0) (2023-06-19)
+
+
+### Features
+
+* 调整编译依赖 ([ec7de31](https://github.com/worldprinter/lowcode-material/commit/ec7de31ca92e6661f8d9d5d38d4c6d20aaa07441))
+
 ## [0.1.1](https://github.com/worldprinter/lowcode-material/compare/v0.1.0...v0.1.1) (2023-06-19)
 
 
