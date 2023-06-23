@@ -1,6 +1,6 @@
 {
     "name": "@worldprinter/lowcode-material-wdesign",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "peerDependencies": {
         "react": ">=16.8.0",
         "react-dom": ">=16.8.0",
