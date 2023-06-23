@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/worldprinter/lowcode-material/compare/v0.2.0...v0.3.0) (2023-06-23)
+
+
+### Features
+
+* add radio radio group ([e0ee3a6](https://github.com/worldprinter/lowcode-material/commit/e0ee3a65c4ce89be99e76bc809097f8bac6c282e))
+
 ## [0.2.0](https://github.com/worldprinter/lowcode-material/compare/v0.1.1...v0.2.0) (2023-06-19)
 
 
