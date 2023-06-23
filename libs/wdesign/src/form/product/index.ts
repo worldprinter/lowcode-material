@@ -12,6 +12,7 @@ import { Form, FormMetadata } from './form'
 import { FormItem, FormItemMetadata } from './form-item'
 import { FormInput, FormInputItem, FormInputItemMetadata, FormInputMetadata } from './input'
 import { FormLayout, FormLayoutMetadata } from './layout'
+import { FormLogic, FormLogicMetadata } from './logic'
 import {
     FormRadio,
     FormRadioGroup,
@@ -42,6 +43,7 @@ export const ProductComponent = {
     FormItem,
     FormLayout,
     FormText,
+    FormLogic,
 }
 
 export const ProductMetadata = [
@@ -61,4 +63,5 @@ export const ProductMetadata = [
     FormSelectMetadata,
     FormSelectItemMetadata,
     FormTextMetadata,
+    FormLogicMetadata,
 ]

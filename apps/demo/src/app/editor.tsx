@@ -115,14 +115,8 @@ export const Editor = () => {
         componentsMeta: [],
         componentsTree: {
             componentName: 'RootContainer',
-            props: {
-                a: 1,
-            },
-            state: {
-                b: 2,
-                buttonVisible: true,
-                modalVisible: false,
-            },
+            props: {},
+            state: {},
             configure: {
                 propsSetter: {},
                 advanceSetter: {},
