@@ -68,7 +68,7 @@
         "@emotion/core": "^11.0.0",
         "@swc/helpers": "~0.5.0",
         "@types/lodash": "^4.14.195",
-        "@worldprinter/formeasy": "0.2.1",
+        "@worldprinter/formeasy": "0.2.3",
         "@worldprinter/lowcode-engine": "0.8.0",
         "@worldprinter/lowcode-layout": "0.8.0",
         "@worldprinter/lowcode-model": "0.8.0",

@@ -2803,7 +2803,7 @@ __metadata:
     "@vitejs/plugin-react": ^3.0.0
     "@vitest/coverage-c8": ^0.31.0
     "@vitest/ui": ^0.31.0
-    "@worldprinter/formeasy": 0.2.1
+    "@worldprinter/formeasy": 0.2.3
     "@worldprinter/lowcode-engine": 0.8.0
     "@worldprinter/lowcode-layout": 0.8.0
     "@worldprinter/lowcode-model": 0.8.0
@@ -5734,9 +5734,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@worldprinter/formeasy@npm:0.2.1":
-  version: 0.2.1
-  resolution: "@worldprinter/formeasy@npm:0.2.1"
+"@worldprinter/formeasy@npm:0.2.3":
+  version: 0.2.3
+  resolution: "@worldprinter/formeasy@npm:0.2.3"
   dependencies:
     consola: 3.1.0
     deep-object-diff: 1.1.9
@@ -5746,7 +5746,7 @@ __metadata:
     react: 18.2.0
     react-fast-compare: 3.2.2
     tiny-warning: 1.0.3
-  checksum: 15eedf3ceb3bd72253785e37042edd2a381ec0557115f96672fca07fa27b3e1f0be44a70c3cae978a2c9df52ba5f0682478f6dbfaf44ce1e5f740e4de50278a7
+  checksum: 9174becd2f81e89a99a2d7206d1a549af1f4be4ed54e81b7cb0acc5d5c7e0e0e576a734deec63044aaf0ba2b4818faa17a47f46b2f4af4ddc8293fa0b5554ad7
   languageName: node
   linkType: hard
 
