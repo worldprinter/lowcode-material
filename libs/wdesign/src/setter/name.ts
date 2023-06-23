@@ -5,7 +5,7 @@ export const NameSetter: MaterialPropType = {
     title: '字段名称',
     valueType: 'string',
     setters: ['StringSetter'],
-    condition: (state) => {
+    condition: (_state) => {
         return true
     },
 }

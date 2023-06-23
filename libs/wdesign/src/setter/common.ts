@@ -33,11 +33,11 @@ export const CommonSetters = [
                     options: [
                         {
                             value: 'vertical',
-                            label: '水平',
+                            label: '垂直',
                         },
                         {
                             value: 'horizontal',
-                            label: '垂直',
+                            label: '水平',
                         },
                     ],
                 },
@@ -267,44 +267,6 @@ export const CommonSetters = [
         ],
     },
     {
-        name: 'labelHeight',
-        title: '标题高度',
-        valueType: 'string',
-        condition: (state: any) => {
-            return get(state, 'labelPosition') === 'left'
-        },
-        defaultValue: 'sm',
-        setters: [
-            {
-                componentName: 'SelectSetter',
-                props: {
-                    options: [
-                        {
-                            value: 'xs',
-                            label: 'xs',
-                        },
-                        {
-                            value: 'sm',
-                            label: 'sm',
-                        },
-                        {
-                            value: 'md',
-                            label: 'md',
-                        },
-                        {
-                            value: 'lg',
-                            label: 'lg',
-                        },
-                        {
-                            value: 'xl',
-                            label: 'xl',
-                        },
-                    ],
-                },
-            },
-        ],
-    },
-    {
         name: 'data',
         title: '数据',
         valueType: 'array',
@@ -354,29 +316,6 @@ export const CommonSetters = [
         title: '可搜索',
         valueType: 'boolean',
         setters: ['BooleanSetter'],
-    },
-    {
-        name: 'layout',
-        title: '对齐方式',
-        valueType: 'string',
-        setters: [
-            {
-                componentName: 'SelectSetter',
-                props: {
-                    options: [
-                        {
-                            value: 'vertical',
-                            label: '水平',
-                        },
-                        {
-                            value: 'horizontal',
-                            label: '垂直',
-                        },
-                    ],
-                },
-            },
-        ],
-        defaultValue: 'horizontal',
     },
     // 是否可创建,接收(query: string, data: SelectItem[]) => boolean
     // {
@@ -446,6 +385,17 @@ export const CommonSetters = [
         title: '文本颜色',
         valueType: 'string',
         setters: ['StringSetter'],
+    },
+    {
+        name: 'width',
+        title: '组件宽度',
+        valueType: 'string',
+        setters: ['StringSetter'],
+        defaultValue: '100%',
+    },
+    {
+        name: 'padding',
+        title: '内边距',
     },
     // @ts-ignore
 ] as const satisfies MaterialPropType[]

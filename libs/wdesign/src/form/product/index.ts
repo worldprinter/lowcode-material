@@ -12,6 +12,16 @@ import { Form, FormMetadata } from './form'
 import { FormItem, FormItemMetadata } from './form-item'
 import { FormInput, FormInputItem, FormInputItemMetadata, FormInputMetadata } from './input'
 import { FormLayout, FormLayoutMetadata } from './layout'
+import {
+    FormRadio,
+    FormRadioGroup,
+    FormRadioGroupItem,
+    FormRadioGroupItemMetadata,
+    FormRadioGroupMetadata,
+    FormRadioItem,
+    FormRadioItemMetadata,
+    FormRadioMetadata,
+} from './radio'
 import { FormSelect, FormSelectItem, FormSelectItemMetadata, FormSelectMetadata } from './select'
 import { FormText, FormTextMetadata } from './text'
 
@@ -22,6 +32,10 @@ export const ProductComponent = {
     FormCheckboxItem,
     FormCheckboxGroup,
     FormCheckboxGroupItem,
+    FormRadio,
+    FormRadioItem,
+    FormRadioGroup,
+    FormRadioGroupItem,
     FormSelect,
     FormSelectItem,
     Form,
@@ -40,6 +54,10 @@ export const ProductMetadata = [
     FormCheckboxItemMetadata,
     FormCheckboxGroupMetadata,
     FormCheckboxGroupItemMetadata,
+    FormRadioMetadata,
+    FormRadioItemMetadata,
+    FormRadioGroupMetadata,
+    FormRadioGroupItemMetadata,
     FormSelectMetadata,
     FormSelectItemMetadata,
     FormTextMetadata,

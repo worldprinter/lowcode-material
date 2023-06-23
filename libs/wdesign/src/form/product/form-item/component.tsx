@@ -131,20 +131,12 @@ function InnerFormItem({
             label={uiProps.title}
             error={meta.error}
             description={showDescription && description}
-            sx={() => ({
-                alignItems: 'flex-start',
-                WebkitAlignItems: 'flex-start',
-                '.label-wrapper-container label': {
-                    height: get(sizes, layoutProps?.labelHeight || 'sm', 'sm'),
-                    lineHeight: get(sizes, layoutProps?.labelHeight || 'sm', 'sm'),
-                },
-            })}
         >
             <FormItemProvider value={fieldProps}>{children}</FormItemProvider>
         </Input.Wrapper>
     )
 }
-;``
+
 export const FormItem = CheckForm(InnerFormItem)
 
 export function withFormItem<T>(Component: React.FC<BaseFormItemProps & T>) {

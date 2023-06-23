@@ -21,7 +21,6 @@ export const LayoutSetter = getCommonSetters(
     'layoutSpacing',
     'labelPosition',
     'labelWidth',
-    'labelHeight',
     'showValidation',
     'inherit',
 )
@@ -31,7 +30,6 @@ export const FormItemSetter = [
         'title',
         'labelPosition',
         'labelWidth',
-        'labelHeight',
         'showValidation',
         'validate',
         'showDescription',
@@ -45,27 +43,41 @@ export const BaseInputSetter = [
 
 export const BaseSelectSetter = [
     ...getCommonSetters(
+        'data',
+        'defaultValue',
         'placeholder',
         'disabled',
         'required',
         'hidden',
-        'data',
         'size',
         'variant',
-        'defaultValue',
         'searchable',
     ),
 ]
 
 export const BaseCheckboxGroupSetter = [
     ...getCommonSetters(
+        'data',
+        'defaultValue',
         'disabled',
         'required',
         'hidden',
-        'data',
         'size',
         'variant',
+        'itemDirection',
+        'itemSpacing',
+    ),
+]
+
+export const BaseRadioGroupSetter = [
+    ...getCommonSetters(
+        'data',
         'defaultValue',
+        'disabled',
+        'required',
+        'hidden',
+        'size',
+        'variant',
         'itemDirection',
         'itemSpacing',
     ),

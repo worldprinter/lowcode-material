@@ -6,7 +6,6 @@ export declare type LayoutOptions = {
     layout: 'vertical' | 'horizontal'
     layoutSpacing: string | number
     showValidation: boolean
-    labelHeight: string
 }
 
 export const LayoutContext = React.createContext<LayoutOptions>({
@@ -14,8 +13,6 @@ export const LayoutContext = React.createContext<LayoutOptions>({
     labelPosition: 'left',
     layout: 'vertical',
     layoutSpacing: 'md',
-    // description: undefined,
-    // showDescription: true,
     showValidation: true,
 })
 

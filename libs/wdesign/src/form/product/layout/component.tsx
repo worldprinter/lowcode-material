@@ -15,7 +15,6 @@ export function useSplitLayoutProps<T extends Record<string, any>>(props: T & Fo
         return [
             pick(props, [
                 'labelWidth',
-                'labelHeight',
                 'labelPosition',
                 'layout',
                 'layoutSpacing',
@@ -25,7 +24,6 @@ export function useSplitLayoutProps<T extends Record<string, any>>(props: T & Fo
             ]) as FormLayoutProps,
             omit(props, [
                 'labelWidth',
-                'labelHeight',
                 'labelPosition',
                 'layout',
                 'layoutSpacing',
