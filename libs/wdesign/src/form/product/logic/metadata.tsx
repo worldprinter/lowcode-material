@@ -8,6 +8,13 @@ export const FormLogicMetadata = {
     props: [
         NameSetter,
         {
+            name: 'exp',
+            title: '表达式',
+            valueType: 'string',
+            setters: ['StringSetter'],
+            defaultValue: '',
+        },
+        {
             name: 'expTrue',
             title: '表达式为真',
             valueType: 'object',
