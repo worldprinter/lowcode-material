@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.3](https://github.com/worldprinter/lowcode-material/compare/v0.3.2...v0.3.3) (2023-06-29)
+
 ## [0.3.2](https://github.com/worldprinter/lowcode-material/compare/v0.3.1...v0.3.2) (2023-06-23)
 
 ## [0.3.1](https://github.com/worldprinter/lowcode-material/compare/v0.3.0...v0.3.1) (2023-06-23)
