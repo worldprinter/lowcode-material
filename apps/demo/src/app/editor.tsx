@@ -15,9 +15,9 @@ import { Button, WDesignProvider } from '@worldprinter/wdesign-core'
 import './app.css'
 
 import { message } from 'antd'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import Preview from './preview'
+// import Preview from './preview'
 
 const win = window as any
 win.React = React

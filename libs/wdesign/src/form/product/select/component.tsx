@@ -15,9 +15,6 @@ export function InnerSelect(props: FormSelectProps) {
     const [fieldProps, selectProps] = useSplitFieldProps(itemProps)
     const [{ value }, , { setValue, setTouched }] = useField(fieldProps)
 
-    console.log('fieldProps', fieldProps)
-    console.log('selectProps', selectProps)
-
     return (
         <Select
             {...(selectProps as any)}
