@@ -115,8 +115,6 @@ function InnerFormItem({
         validate,
     })
 
-    console.log('fieldProps', fieldProps)
-
     return (
         <Input.Wrapper
             inputWrapperOrder={['label', 'input', 'description', 'error']}

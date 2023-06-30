@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import type { FormikHelpers } from '@worldprinter/formeasy'
 import { FormikProvider, useFormik } from '@worldprinter/formeasy'
+
+import { RenderFormContext } from '../../../index'
 
 const InnerForm: React.FC<any> = (props) => {
     const formik = useFormik({
@@ -13,6 +15,17 @@ const InnerForm: React.FC<any> = (props) => {
             console.log(values, formikHelpers)
         },
     })
+
+    const { formData, setFormData } = useContext<Record<string, any>>(RenderFormContext)
+
+    useEffect(() => {
+        if (setFormData) {
+            setFormData({
+                ...formData,
+                [props.name]: formik.values,
+            })
+        }
+    }, [formik.values])
 
     return (
         <FormikProvider value={formik}>

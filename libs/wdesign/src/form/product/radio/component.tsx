@@ -59,8 +59,6 @@ export function InnerRadioGroup(props: FormRadioGroupProps) {
     const [fieldProps, radioGroupProps] = useSplitFieldProps(itemProps)
     const [{ value }, , { setValue, setTouched }] = useField(fieldProps)
 
-    console.log(radioGroupProps.data)
-
     return (
         <Radio.Group
             {...(radioGroupProps as any)}

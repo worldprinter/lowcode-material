@@ -41,6 +41,10 @@ export const BaseInputSetter = [
     ...getCommonSetters('placeholder', 'disabled', 'readonly', 'required', 'hidden', 'size', 'variant'),
 ]
 
+export const GxSetter = [
+    ...getCommonSetters('placeholder', 'disabled', 'readonly', 'required', 'hidden', 'size', 'variant'),
+]
+
 export const BaseSelectSetter = [
     ...getCommonSetters(
         'data',

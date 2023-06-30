@@ -17,8 +17,6 @@ import './app.css'
 import { message } from 'antd'
 import { NavLink } from 'react-router-dom'
 
-// import Preview from './preview'
-
 const win = window as any
 win.React = React
 win.ReactDOM = ReactDOM
@@ -175,7 +173,7 @@ export const Editor = () => {
         <Engine
             plugins={DEFAULT_PLUGIN_LIST}
             schema={page as any}
-            material={[...ProductMetadata, EmotionProviderMeta]}
+            material={[...(ProductMetadata as any), EmotionProviderMeta as any]}
             assetPackagesList={[]}
             beforePluginRun={({ pluginManager }) => {
                 pluginManager.customPlugin('Designer', (pluginInstance) => {
